@@ -1,0 +1,7 @@
+try {
+	PrintWriter writer = new PrintWriter("logFile.log", "UTF-8");
+	writer.println("log-content");
+	writer.close();
+} catch (Exception e){
+
+}
