@@ -1,6 +1,6 @@
 # xmlparser
 
-Syntax: run.sh <XSLFile> <XMLFile> <OutputFile>
+Syntax: run.sh \<XSLFile\> \<XMLFile\> \<OutputFile\>
 
 Example:
 
