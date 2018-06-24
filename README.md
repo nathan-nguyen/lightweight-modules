@@ -1,3 +1,9 @@
+# lightweight-modules
+
+Collection of lightweight modules that can be used for quick development.
+
+<br/>
+
 1. $ git clone &lt;repository>.git
 
 2. $ cd &lt;repository>
@@ -21,4 +27,6 @@
 (See differences)
 
 1. $ git diff
+
 2. Press q to quit
+
