@@ -3,30 +3,33 @@
 Collection of lightweight modules that can be used for quick development.
 
 <br/>
+Basic git commands:
 
-1. $ git clone &lt;repository>.git
+- $ git clone &lt;repository>.git
 
-2. $ cd &lt;repository>
+- $ cd &lt;repository>
 
-3. &lt;make changes>
+- &lt;make changes>
 
-4. $ git add --all
+- $ git add --all
 
-5. $ git commit -m "&lt;Commit notes>"
+- $ git commit -m "&lt;Commit notes>"
 
-6. $ git push -u origin master
+- $ git push -u origin master
 
+<br/>
 (Merge branches)
 
-1. $ git clone &lt;firstRepository>.git
+- $ git clone &lt;firstRepository>.git
 
-2. $ cd &lt;firstRepository>
+- $ cd &lt;firstRepository>
 
-3. $ git pull &lt;secondRepository>.git
+- $ git pull &lt;secondRepository>.git
 
+<br/>
 (See differences)
 
-1. $ git diff
+- $ git diff
 
-2. Press q to quit
+- Press q to quit
 
