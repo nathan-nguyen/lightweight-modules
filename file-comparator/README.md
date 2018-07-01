@@ -4,3 +4,6 @@ This is a simple file comparator tool. If file size is small, we should use diff
 
 If file size is large, this tool can be used because it only loads 1 line at a time from each file.
 
+<br/>
+The nicer version of code is in Format/FileCompartor.java
+
