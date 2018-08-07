@@ -4,9 +4,9 @@ import java.io.Scanner;
 public class FileComparator {
 
   /**
-    * Main class for FileComparator.
-    * Two arguments: FileOne FileTwo.
-  */
+   * Main class for FileComparator.
+   * Two arguments: FileOne FileTwo.
+   */
   public static void main(String[] args) {
     System.out.println("\nSimple file comparator");
     System.out.println("Please note that both input files have to be sorted\n");
