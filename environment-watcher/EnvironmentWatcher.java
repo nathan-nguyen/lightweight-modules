@@ -94,8 +94,8 @@ public class EnvironmentWatcher {
 			StringBuilder fileLog = new StringBuilder();
 
 			for (String output: outputList) {
-				if (output.contains("+ ")) {
-					output.replaceAll("\\+", "");
+				if (output.contains("+")) {
+					output = output.replaceAll("\\+", "");
 					list.add(output);
 
 					if (! currentCommand.contains(output)) {
