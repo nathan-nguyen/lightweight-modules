@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MazeConstructor {
+	// CENTER_MODE = true if destination is in the center
 	private static final boolean CENTRE_MODE = false;
 
 	private static final int EMPTY = 0;
@@ -24,6 +25,7 @@ public class MazeConstructor {
 		this.printOrder = printOrder;
 	}
 
+	// Return true if maze is constructed successfully
 	public boolean construct(){
 		ArrayList<Integer> expandableList = new ArrayList<>();
 		// Using two dimension array for easy maintenance
@@ -46,6 +48,7 @@ public class MazeConstructor {
 
 		// Keep expanding the maze until there is not any space left
 		while (true) {
+			// If neighbor square is empty but invalid position, set neighbor to INVALID
 			if (map[next / dimension - 1][next % dimension] == EMPTY && !isValidPosition(next - dimension, dimension))
 				map[next / dimension - 1][next % dimension] = INVALID;
 			if (map[next / dimension][next % dimension + 1] ==  EMPTY && !isValidPosition(next + 1, dimension))
@@ -55,6 +58,7 @@ public class MazeConstructor {
 			if (map[next / dimension][next % dimension - 1] == EMPTY && !isValidPosition(next - 1, dimension))
 				map[next / dimension][next % dimension - 1] = INVALID;
 
+			// If all four neighbors are not EMPTY, remove next from expendableList
 			if (map[next / dimension - 1][next % dimension] != EMPTY && map[next / dimension][next % dimension + 1] != EMPTY
 				&& map[next / dimension + 1][next % dimension] != EMPTY && map[next / dimension][next % dimension - 1] != EMPTY) {
 				expandableList.remove(Integer.valueOf(next));
@@ -74,19 +78,19 @@ public class MazeConstructor {
 				map[nextSquare / dimension][nextSquare % dimension] = 9;
 
 			next = nextSquare;
-//			next = expandableList.get(rand.nextInt(expandableList.size()));
 		}
 
-//		printMap();
-//		printMaze();
+		// printMaze();
+		System.out.print("Maze wall: ");
 		printWall();
+		System.out.println("\nMaze path: ");
+		printMazePath();
 
 		return CENTRE_MODE ? map[dimension / 2][dimension / 2] == 9 : map[dimension - 2][dimension - 2] > 0;
 	}
 
+	// Find next random adjacent empty square, always guarantee to terminate
 	private int nextSquare(int next, int n){
-		// Keep looking for the next square
-		// This is always guarantee to terminate
 		while (true) {
 			int order = rand.nextInt(4);
 			switch (order) {
@@ -98,6 +102,7 @@ public class MazeConstructor {
 		}
 	}
 
+	// Valid position is position with only 1 non-EMPTY and non-INVALID neighbor
 	private boolean isValidPosition(int x, int n) {
 		int count = 0;
 		if (map[x / n - 1][x % n] > 0) ++count;
@@ -107,7 +112,7 @@ public class MazeConstructor {
 		return count == 1;
 	}
 
-	private void printMap(){
+	private void printMazePath(){
 		for (int i = 0; i < dimension; ++i){
 			for (int j = 0; j < dimension; ++j){
 				if (i == 0 || i == dimension - 1 || j == 0 || j == dimension - 1) System.out.print(printBorder ? "x " : "  ");
@@ -150,7 +155,6 @@ public class MazeConstructor {
 			}
 			System.out.println();
 		}
-
 	}
 
 	// Please dont use this method unless you have already initialized unit array properly
